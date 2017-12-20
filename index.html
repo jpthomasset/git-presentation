@@ -72,7 +72,7 @@
 						<p>
 							Un arbre de toutes les versions organisés autour de commits.
 						</p>
-						<img width="656" height="325" src="/img/basic-tree.png">
+						<img width="656" height="325" src="img/basic-tree.png">
 						<aside class="notes">
 						Chaque commit fait référence à son prédecesseur dans l'arbre, son parent direct.
 						</aside>
@@ -83,7 +83,7 @@
 						<p>
 							Ce n'est pas une suite de 'diff' des différents fichiers mais bien un snapshot de l'intégralité
 						</p>
-						<img width="656" height="262" src="/img/snapshots.png">
+						<img width="656" height="262" src="img/snapshots.png">
 						<aside class="notes">
 
 						</aside>
@@ -93,7 +93,7 @@
 						<h2>Une zone tampon</h2>
 						<h3>index ou staging area</h3>
 						<p>C'est là ou se trouve vos <strong>modifications</strong> quand vous ajoutez une modification (git add)</p>
-						<img width="656" height="374" src="/img/git-areas.png">
+						<img width="656" height="374" src="img/git-areas.png">
 
 						<aside class="notes">
 							Attention, c'est l'image au moment du 'add', cela ne suit pas spéficiquement les fichiers ajoutés
@@ -104,12 +104,12 @@
 
 					<section>
 						<h2>Mais où est <strike>Waldo</strike> le serveur ?</h2>
-						<img width="75" height="150" src="/img/wheres-waldo.jpg" alt="Where's Waldo?">
+						<img width="75" height="150" src="img/wheres-waldo.jpg" alt="Where's Waldo?">
 					</section>
 
 					<section>
 						<h2>C'est un dépôt distant !</h2>
-						<img width="328" src="/img/distributed.png">
+						<img width="328" src="img/distributed.png">
 						<aside class="notes">
 							C'est la notion de "serveur distribué" qui se cache derrière ce gestionnaire de version
 						</aside>
@@ -130,7 +130,7 @@
 						<h2>Une branche c'est quoi ?</h2>
 						<p>
 							Une divergence dans l'arbre des commits
-							<img width="500" src="/img/basic-branching-1.png">
+							<img width="500" src="img/basic-branching-1.png">
 						</p>
 						
 						<aside class="notes">
@@ -141,11 +141,12 @@
 					<section>
 						<h2>Un cas simple, le fast-forward</h2>
 						<p>
-							<img  width="300" src="/img/back-future.jpg">
+							<img  width="300" src="img/back-future.jpg">
 						</p>
 						<p class="fragment">
-							<code>$ git pull</code> Ou <code>$ git merge origin/2.1</code>
-							<img  width="500" src="/img/basic-branching-2.png">
+						    <code>$ git pull</code> <br />Ou <br /><code>$ git fetch & git merge origin/2.1</code>
+                                                    <br />
+						    <img  width="500" src="img/basic-branching-2.png">
 						</p>
 						<aside class="notes">
 							
@@ -154,7 +155,7 @@
 					<section>
 						<h2>Ok mais un vrai merge c'est quoi ?</h2>
 						<p>
-							<img width="656" src="/img/basic-merge-1.png">
+							<img width="656" src="img/basic-merge-1.png">
 						</p>
 						<aside class="notes">
 							
@@ -164,7 +165,7 @@
 						<h2>Une réconciliation !</h2>
 						<p>
 							C'est la réconciliation des branches avec leur ancêtre commun
-							<img width="656" src="/img/basic-merge-2.png">
+							<img width="656" src="img/basic-merge-2.png">
 						</p>
 
 						<aside class="notes">
@@ -175,7 +176,7 @@
 					<section>
 						<h2>Dans un nouveau commit</h2>
 						<p>
-							<img width="656" src="/img/basic-merge-3.png">
+							<img width="656" src="img/basic-merge-3.png">
 						</p>
 						
 					</section>
@@ -201,7 +202,7 @@
 						<h2>Et un rebase c'est quoi ?</h2>
 						<p>
 							On repart d'une divergence
-							<img width="656" src="/img/basic-rebase-1.png">
+							<img width="656" src="img/basic-rebase-1.png">
 						</p>
 						<aside class="notes">
 							
@@ -211,7 +212,7 @@
 					<section>
 						<h2>Si on faisait un merge</h2>
 						<p>
-							<img width="656" src="/img/basic-rebase-2.png">
+							<img width="656" src="img/basic-rebase-2.png">
 						</p>
 					</section>
 
@@ -222,7 +223,7 @@
 $ git checkout experiment
 $ git rebase master
 							</code></pre>
-							<img width="656" src="/img/basic-rebase-3.png">
+							<img width="656" src="img/basic-rebase-3.png">
 						</p>
 
 						<aside class="notes">
@@ -237,7 +238,7 @@ $ git rebase master
 $ git checkout master
 $ git merge experiment
 							</code></pre>
-							<img width="656" src="/img/basic-rebase-4.png">
+							<img width="656" src="img/basic-rebase-4.png">
 						</p>
 
 						<aside class="notes">
@@ -347,7 +348,7 @@ $ git rebase -i @{u}
 						<h2>Avant</h2>
 						<h3>(beurk !)</h3>
 						<p>
-							<img  height="600" src="/img/v3d-avant.jpg">
+							<img  height="600" src="img/v3d-avant.jpg">
 						</p>
 
 						<aside class="notes">
@@ -356,7 +357,7 @@ $ git rebase -i @{u}
 					</section>
 					<section>
 						<h2>Pourquoi on change ?</h2>
-						<h3>Parce qu'on aime réinventer la route ?</h3>
+						<h3>Parce qu'on aime réinventer la roue ?</h3>
 						<p>
 							<ul>
 								<li class="fragment">Parce que nos branches divergent beaucoup de master</li>
@@ -373,7 +374,7 @@ $ git rebase -i @{u}
 						<h2>Maintenant</h2>
 						<h3>Enfin bientôt</h3>
 						<p>
-							<img height="600" src="/img/v3d-apres.jpg">
+							<img height="600" src="img/v3d-apres.jpg">
 						</p>
 
 						<aside class="notes">
