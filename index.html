@@ -250,7 +250,7 @@ $ git merge experiment
 				<section>
 					<section>
 						<h2>Les choses sérieuses</h2>
-						<h3>La vraie vie chez V3D !</h3>
+						<h3>La vraie vie chez &lt;insert company name&gt; !</h3>
 						<p>
 							
 						</p>
@@ -331,77 +331,6 @@ $ git rebase -i @{u}
 				</section>
 				<section>
 					<section>
-						<h2>La gestion des branches chez V3D</h2>
-						
-						<p>
-							Parce qu'avant on faisait de la m**** mais ça, c'était avant !	
-						</p>
-						<p class="fragment">
-							Je le sais, c'est moi qui l'ai écrit !
-						</p>
-
-						<aside class="notes">
-
-						</aside>
-					</section>
-					<section>
-						<h2>Avant</h2>
-						<h3>(beurk !)</h3>
-						<p>
-							<img  height="600" src="img/v3d-avant.jpg">
-						</p>
-
-						<aside class="notes">
-						Enfin, c'est surtout qu'on a pris de mauvaises habitudes. On a une branche par version mais qui restent toujours paralèlle.
-						</aside>
-					</section>
-					<section>
-						<h2>Pourquoi on change ?</h2>
-						<h3>Parce qu'on aime réinventer la roue ?</h3>
-						<p>
-							<ul>
-								<li class="fragment">Parce que nos branches divergent beaucoup de master</li>
-								<li class="fragment">Et les outils standards fonctionnent mal dans cet état</li>
-								<li class="fragment">Et pour appliquer les bonnes pratiques</li>
-							</ul>
-						</p>
-
-						<aside class="notes">
-						L'affichage des branches et leur gestion devient problématique avec les outils standards
-						</aside>
-					</section>
-					<section>
-						<h2>Maintenant</h2>
-						<h3>Enfin bientôt</h3>
-						<p>
-							<img height="600" src="img/v3d-apres.jpg">
-						</p>
-
-						<aside class="notes">
-						On aura notre branche de développement qui sera toujours master jusqu'à la release finale d'une version.
-						Ensuite, on crée une branche stable 'historique' pour 
-						</aside>
-					</section>
-
-					<section>
-						<h2>Plus clairement</h2>
-						<p>
-							<ul>
-								<li class="fragment"><code>master</code> devient notre branche de développement</li>
-								<li class="fragment">Toutes les fonctionnalités sont développées dans une branche de master</li>
-								<li class="fragment">Qui se refusionnent dans master</li>
-								<li class="fragment">Quand on a une version stable, on crée la branche correspondante</li>
-							</ul>
-						</p>
-
-						<aside class="notes">
-						On travaille donc 90% du temps sur master ou une branche directe de master.
-						On travaille sur une branche stable que pour du bug fix!
-						</aside>
-					</section>
-
-
-					<section>
 						<h2>Quand est-ce qu'on...</h2>
 						<h3 class="fragment">merge ?</h3>
 						<p class="fragment">
@@ -443,10 +372,61 @@ $ git merge xxxx
 						<h2>Pour le quotidien</h2>
 						<p>Ouais parce que c'est bien beau, mais je tape quoi comme commande moi ?</p>
 						<aside class="notes">
-						Il faut bien sûr tout faire en ligne de commande pour exploiter git, mais pas de panique, c'est pas compliqué
+						    Il faut bien sûr tout faire en ligne de commande pour exploiter git, mais pas de panique, c'est pas compliqué
 						</aside>
 					</section>
 
+                                        <section>
+					    <h2>Commit simple</h2>
+					    
+					    <p>
+						<pre><code>
+$ git add myfile.scala
+$ git commit -m "fix the nasty bug"
+						</code></pre>
+					    </p>
+		                            
+					</section>
+
+                                        <section>
+					    <h2>On envoie sur le serveur</h2>
+					    
+					    <p>
+						<pre><code>
+$ git pull
+$ git mergetool # if needed
+$ git push
+						</code></pre>
+					    </p>
+		                            
+					</section>
+                                        
+
+                                        <section>
+					    <h2>Oups ! I did it again</h2>
+					    Si on identifie un commit dont on veut se débarasser
+					    <p>
+						<pre><code>
+$ git revert ef8c762
+						</code></pre>
+					    </p>
+		                            
+					</section>
+
+                                        <section>
+					    <h2>stash, stash</h2>
+					    Sauvegarder ses modifications dans un espace temporaire sans commit
+					    <p>
+						<pre><code>
+$ git stash
+$ git stash pop
+						</code></pre>
+					    </p>
+		                            
+					</section>
+
+                                        
+                                        
 					<section>
 						<h2>Recherche d'un historique</h2>
 						<p>Pas de <code>git blame</code> mais :</p>
@@ -529,22 +509,6 @@ $ git cherry-pick 7c28d2e
 						</p>
 						<aside class="notes">
 							
-						</aside>
-					</section>
-
-					<section>
-						<h2>Home office</h2>
-						<h3>Comment travailler sur les dépots à distance ?</h3>
-						<p>
-							En utilisant un serveur de rebond
-							<pre><code>
-$ export GIT_SSH=~/ssh-wrapper.sh							
-$ git fetch
-							</code></pre>
-						</p>
-						<h3>Demo</h3>
-						<aside class="notes">
-							Il faudra envoyer vos clés publiques ssh (id_rsa.pub) à Adrien
 						</aside>
 					</section>
 
