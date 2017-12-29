@@ -6,29 +6,26 @@
 
 		<title>GIT - Do's &amp; Don'ts</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
 
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="css/reveal.min.css">
-		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+                <link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
 
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+                <!-- Printing and PDF exports -->
 		<script>
-			if( window.location.search.match( /print-pdf/gi ) ) {
-				var link = document.createElement( 'link' );
-				link.rel = 'stylesheet';
-				link.type = 'text/css';
-				link.href = 'css/print/pdf.css';
-				document.getElementsByTagName( 'head' )[0].appendChild( link );
-			}
+		 var link = document.createElement( 'link' );
+		 link.rel = 'stylesheet';
+		 link.type = 'text/css';
+		 link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		 document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
 
 		<!--[if lt IE 9]>
@@ -145,12 +142,17 @@
 						</p>
 						<p class="fragment">
 						    <code>$ git pull</code> <br />Ou <br /><code>$ git fetch & git merge origin/2.1</code>
-                                                    <br />
-						    <img  width="500" src="img/basic-branching-2.png">
 						</p>
 						<aside class="notes">
-							
+						    
 						</aside>
+					</section>
+
+                                        <section>
+					    <h2>Un cas simple, le fast-forward</h2>
+					    <p>
+						<img  width="500" src="img/basic-branching-2.png">
+					    </p>
 					</section>
 					<section>
 						<h2>Ok mais un vrai merge c'est quoi ?</h2>
@@ -164,7 +166,7 @@
 					<section>
 						<h2>Une réconciliation !</h2>
 						<p>
-							C'est la réconciliation des branches avec leur ancêtre commun
+							C'est la réconciliation des branches avec leur ancêtre commun <br />
 							<img width="656" src="img/basic-merge-2.png">
 						</p>
 
@@ -571,37 +573,29 @@ $ git cherry-pick 7c28d2e
 		</div>
 
 		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.min.js"></script>
-
-		<script>
-
-			// Full list of configuration options available here:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
-
-				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
-
-				// Parallax scrolling
-				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
-				// parallaxBackgroundSize: '2100px 900px',
-
-				// Optional libraries used to extend on reveal.js
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-				]
-			});
-
+		<script src="js/reveal.js"></script>
+                
+                <script>
+		 // More info https://github.com/hakimel/reveal.js#configuration
+		 Reveal.initialize({
+		     controls: true,
+		     progress: true,
+		     history: true,
+		     center: true,
+		     transition: 'slide', // none/fade/slide/convex/concave/zoom
+		     // More info https://github.com/hakimel/reveal.js#dependencies
+		     dependencies: [
+			 { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+			 { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+			 { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+			 { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+			 { src: 'plugin/search/search.js', async: true },
+			 { src: 'plugin/zoom-js/zoom.js', async: true },
+			 { src: 'plugin/notes/notes.js', async: true }
+		     ]
+		 });
 		</script>
+
 
 	</body>
 </html>
